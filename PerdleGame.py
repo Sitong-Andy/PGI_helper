@@ -1,4 +1,5 @@
 from pinyin_to_list import convert_pinyin_to_list
+from utils import num_diff_char
 
 
 chengyu_path = open("chengyu_introText.csv", "r", encoding="utf-8")
@@ -15,27 +16,23 @@ for idx in range(len(chengyu_set) // 2):
 
 
 # word = [-1, -1, -1, -1]
-# tone = [-1, -1, -1, -1]
 # correct_pos = [[[]], [[]], [[]], [[]]]
 # wrong_pos = [[[]], [[]], [[]], [[]]]
+# poss_char = []
 
 
 word = [-1, -1, -1, -1]
-tone = [-1, -1, -1, -1]
 correct_pos = [[[]], [[]], [[]], [[]]]
 wrong_pos = [[[]], [[]], [[]], [[]]]
+poss_char = []
 
 
-possible_result = []
+possible_result = {}
 for c in chengyu_dict:
     is_match = True
     cur_chengyu = c[4]
     for i in range(len(word)):
         if word[i] != -1 and c[i][2] != word[i]:
-            is_match = False
-
-    for i in range(len(tone)):
-        if tone[i] != -1 and c[i][1] != tone[i]:
             is_match = False
 
     for i in range(len(correct_pos)):
@@ -56,8 +53,21 @@ for c in chengyu_dict:
             ):
                 is_match = False
 
+    is_poss = True
+    for i in poss_char:
+        temp = False
+        for j in range(4):
+            if i in c[j][0]:
+                temp = True
+        is_poss &= temp
+    is_match &= is_poss
+
     if is_match:
-        possible_result.append(cur_chengyu)
+        num_of_char = num_diff_char(c)
+        if num_of_char not in possible_result.keys():
+            possible_result[num_of_char] = []
+        possible_result[num_of_char].append(cur_chengyu)
 
 
-print(possible_result)
+for i in sorted(possible_result.keys()):
+    print(i, possible_result[i])

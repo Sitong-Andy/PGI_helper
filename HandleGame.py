@@ -1,5 +1,5 @@
 from vowel_consonant_to_list import convert_vowel_consonant_to_list
-
+from utils import num_diff_char2
 
 chengyu_path = open("chengyu_introText.csv", "r", encoding="utf-8")
 chengyu_set = chengyu_path.read().split("\n")
@@ -31,7 +31,7 @@ poss_con_in_word = []
 poss_vo_in_word = []
 
 
-possible_result = []
+possible_result = {}
 for c in chengyu_dict:
     is_match = True
     cur_chengyu = c[4]
@@ -75,7 +75,11 @@ for c in chengyu_dict:
         is_match = False
 
     if is_match:
-        possible_result.append(cur_chengyu)
+        num_of_char = num_diff_char2(c)
+        if num_of_char not in possible_result.keys():
+            possible_result[num_of_char] = []
+        possible_result[num_of_char].append(cur_chengyu)
 
 
-print(possible_result)
+for i in sorted(possible_result.keys()):
+    print(i, possible_result[i])

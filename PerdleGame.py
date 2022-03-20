@@ -17,13 +17,23 @@ for idx in range(len(chengyu_set) // 2):
 
 # word = [-1, -1, -1, -1]
 # correct_pos = [[[]], [[]], [[]], [[]]]
-# wrong_pos = [[[]], [[]], [[]], [[]]]
+# wrong_pos = [
+#     [[]],
+#     [[]],
+#     [[]],
+#     [[]],
+# ]
 # poss_char = []
 
 
 word = [-1, -1, -1, -1]
 correct_pos = [[[]], [[]], [[]], [[]]]
-wrong_pos = [[[]], [[]], [[]], [[]]]
+wrong_pos = [
+    [[]],
+    [[]],
+    [[]],
+    [[]],
+]
 poss_char = []
 
 

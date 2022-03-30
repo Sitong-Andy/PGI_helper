@@ -13,13 +13,13 @@ for idx in range(len(chengyu_set) // 2):
     chengyu_dict.append(convert_cv)
 
 
-# tone = [-1, -1, -1, -1]
-# correct_con = ["", "", "", ""]
-# correct_vo = ["", "", "", ""]
-# con_not_in_word = []
-# vo_not_in_word = []
-# poss_con_in_word = []
-# poss_vo_in_word = []
+tone = [-1, -1, -1, -1]
+correct_con = ["", "", "", ""]
+correct_vo = ["", "", "", ""]
+con_not_in_word = []
+vo_not_in_word = []
+poss_con_in_word = []
+poss_vo_in_word = []
 
 
 tone = [-1, -1, -1, -1]

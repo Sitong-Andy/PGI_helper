@@ -15,15 +15,15 @@ for idx in range(len(chengyu_set) // 2):
     chengyu_dict.append(duyin)
 
 
-# word = [-1, -1, -1, -1]
-# correct_pos = [[[]], [[]], [[]], [[]]]
-# wrong_pos = [
-#     [[]],
-#     [[]],
-#     [[]],
-#     [[]],
-# ]
-# poss_char = []
+word = [-1, -1, -1, -1]
+correct_pos = [[[]], [[]], [[]], [[]]]
+wrong_pos = [
+    [[]],
+    [[]],
+    [[]],
+    [[]],
+]
+poss_char = []
 
 
 word = [-1, -1, -1, -1]

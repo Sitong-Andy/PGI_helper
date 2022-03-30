@@ -1,5 +1,5 @@
-from pinyin_to_list import ConvertToneNumbersPinyin
-from dict import consontant_dict, vowel_dict
+from utils.pinyin_to_list import ConvertToneNumbersPinyin
+from utils.dict import consontant_dict, vowel_dict
 
 
 def get_consontant(pinyin):

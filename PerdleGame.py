@@ -1,5 +1,5 @@
-from pinyin_to_list import convert_pinyin_to_list
-from utils import num_diff_char
+from utils.pinyin_to_list import convert_pinyin_to_list
+from utils.diff_char import num_diff_char
 
 
 chengyu_path = open("chengyu_introText.csv", "r", encoding="utf-8")

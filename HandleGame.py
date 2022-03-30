@@ -1,5 +1,5 @@
-from vowel_consonant_to_list import convert_vowel_consonant_to_list
-from utils import num_diff_char2
+from utils.vowel_consonant_to_list import convert_vowel_consonant_to_list
+from utils.diff_char import num_diff_char2
 
 chengyu_path = open("chengyu_introText.csv", "r", encoding="utf-8")
 chengyu_set = chengyu_path.read().split("\n")

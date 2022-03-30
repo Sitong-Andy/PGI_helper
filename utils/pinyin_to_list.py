@@ -1,4 +1,4 @@
-from dict import (
+from utils.dict import (
     mapConstTone2ToneConst,
     mapVowelVowelTone2VowelToneVowel,
     mapVowelTone2Unicode,
